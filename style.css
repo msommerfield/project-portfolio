@@ -45,6 +45,7 @@ body{
     color: #ff5349;
     font-family: 'Roboto Mono', monospace;
     text-shadow: 2px 2px 4px rgb(224,224,224);
+    text-align: center;
   }
 
   .mandy{
@@ -53,7 +54,10 @@ body{
     align-items: center;
     flex-direction: column;
     padding-top: 275px;
-  } 
+    padding-bottom: 275px;
+    width: 100%;
+  }
+  
 
   p{
     color: #ff5349;
@@ -72,17 +76,14 @@ body{
     height: 3px;
     background-color: #ff5349;
     margin: 5px;
+    transition: all 0.3s ease;
   }
 
   @media screen and (max-width:1024px){
     .nav-links{
       width: 60%;
     }
-    .mandy{
-      position: absolute;
-      width: 60%;
-      align-items: center;
-    }
+
   }
   @media screen and (max-width:768px){
     body{
@@ -91,53 +92,50 @@ body{
     .nav-links{
       position: absolute;
       right: 0px;
-      height: 92vh;
+      height: 25vh;
       top: 8vh;
       background-color: rgb(43, 73, 209);
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 50%;
+      width: 25%;
       transform: translateX(100%);
       transition: transform 0.5s ease-in;
+     
     }
-    .nav-links{
-      opacity: 0;
-    }
+    
     .burger{
       display: block;
     }
-  }
-
-  .nav-active{
-    transform: translateX(0%);
+    /* .nav-links li{
+      opacity: 0;
+    } */
+  
   }
   
-   
 
+    .nav-active{
+      transform: translateX(0%);
+    }
 
+    @keyframes navLinkFade{
+      from { 
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+  }
 
-
-
-/* align-self: flex-end; */
-
-  /* .about {
-
-  } */
-
-
-
-
-  /* this is the font for the nav bar and links
-  font-family: 'Roboto Slab', serif; */
-  
-  /* font-family: 'Noto Sans', sans-serif;
-  font-family: 'Lora', serif;
-  font-family: 'Roboto Mono', monospace;
-  font-family: 'Arvo', serif;
-  font-family: 'Hind Vadodara', sans-serif;
-  font-family: 'Pontano Sans', sans-serif;
-  font-family: 'Allerta Stencil', sans-serif;  */
-
-/* not using this font on an h1 */
-/* font-family: 'Carter One', cursive; */
+/* 
+    .toggle .line1{
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2{
+      opacity: 0;
+    }
+    .toggle .line3{
+      transform: rotate(-45deg) translate(-5px, -6px);
+    } */
